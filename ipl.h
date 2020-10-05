@@ -21,5 +21,6 @@ ipl(int,std::string,std::string,std::string,int,std::string,std::string,std::str
     int getmatchid();
     std:: string getmatchdate();
     int getseasonyear();
+    bool operator >(const ipl &);
 };
 #endif

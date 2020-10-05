@@ -22,7 +22,7 @@ class cricket
   cricket(const cricket&);
  
   virtual bool toss_match_won(std::string)=0;
-  std::string getteam1();
+   std::string getteam1();
   std::string getteam2();
  
 };

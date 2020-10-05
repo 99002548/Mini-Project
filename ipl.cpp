@@ -4,7 +4,7 @@
 
 
 ipl::ipl():cricket(){ }
-ipl::ipl(int mid,std::string t1, std::string t2,std::string mdate,int syear,std::string vname,std::string cname,std::string ctryname,std::string twin,std::string m_win,std::string tname,std::string wtype,std::string otype,std::string mom):cricket(mid,t1,t2,mdate,syear,vname,cname,ctryname,twin,m_win,tname,wtype,otype,mom){}
+ipl::ipl(int mid,std::string t1,std::string t2,std::string mdate,int syear,std::string vname,std::string cname,std::string ctryname,std::string twin,std::string m_win,std::string tname,std::string wtype,std::string otype,std::string mom):cricket(mid,t1,t2,mdate,syear,vname,cname,ctryname,twin,m_win,tname,wtype,otype,mom){}
 
 
     std:: string ipl::getman_of_match()
@@ -22,7 +22,11 @@ ipl::ipl(int mid,std::string t1, std::string t2,std::string mdate,int syear,std:
       else 
           return false;
     }
-    
+     
+    bool ipl::operator>(const ipl &obj1)
+    {
+    return season_Year>obj1.season_Year;
+    } 
 
     std:: string ipl::getvenue()
     {
