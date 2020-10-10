@@ -14,13 +14,11 @@ ipl.o : ipl.cpp ipl.h cricket.h
 	g++ $< -c    
 cricket.o : cricket.cpp cricket.h
 	g++ $< -c
-clean:
-	rm -rf *.o *.out
-
-
 test:$(BUILD)
 	gcc $(TEST_SRC) -o $(TEST_OUTPUT) -lcunit
 	./$(TEST_OUTPUT)
+clean:
+	rm -rf *.o *.out
 	
 	
 	
