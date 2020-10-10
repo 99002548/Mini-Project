@@ -40,7 +40,7 @@ ipl* insightsofipl::findMatchById(int mid)
 
 }
 
-ipl* insightsofipl::findMatchByDate(std::string date, int syear)
+ipl* insightsofipl::findMatchByDate(std::string& date, int syear)
 {
     std::list<ipl> :: iterator iter;
 
@@ -57,7 +57,7 @@ ipl* insightsofipl::findMatchByDate(std::string date, int syear)
 }
 
 
-   int insightsofipl::matches_in_venue(std::string venue)  
+   int insightsofipl::matches_in_venue(std::string& venue)  
    {
     int count=0;
     std::list<ipl> :: iterator iter;
@@ -73,7 +73,7 @@ ipl* insightsofipl::findMatchByDate(std::string date, int syear)
     return count;
 }
 
- int insightsofipl::num_of_matches(std::string t1)  //method overloading
+ int insightsofipl::num_of_matches(std::string& t1)  //method overloading
    {
     int count=0;
     std::list<ipl> :: iterator iter;
@@ -89,7 +89,7 @@ ipl* insightsofipl::findMatchByDate(std::string date, int syear)
     return count;
 }
 
-int insightsofipl::num_of_matches(std::string t1,int syear)  
+int insightsofipl::num_of_matches(std::string& t1,int syear)  
    {
     int count=0;
     std::list<ipl> :: iterator iter;
@@ -106,7 +106,7 @@ int insightsofipl::num_of_matches(std::string t1,int syear)
 }
 
    
-int insightsofipl::num_of_macthes_won(std::string t1)  
+int insightsofipl::num_of_macthes_won(std::string& t1)  
    {
     int count=0;
     std::list<ipl> :: iterator iter;
@@ -121,7 +121,7 @@ int insightsofipl::num_of_macthes_won(std::string t1)
     return count;
 }
 
-int insightsofipl::num_of_toss_won(std::string t1)
+int insightsofipl::num_of_toss_won(std::string& t1)
 {
 
  int count=0;
