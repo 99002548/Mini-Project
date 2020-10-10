@@ -1,3 +1,6 @@
+BUILD = build
+TEST_SRC = source
+TEST_OUTPUT = $(BUILD)/all.out
 all: all.out 
 all.out : cricket.o ipl.o insightsofipl.o  ipltest.o ioptest.o
 	g++ $^ -o $@ -lgtest -lgtest_main -lpthread
@@ -13,6 +16,11 @@ cricket.o : cricket.cpp cricket.h
 	g++ $< -c
 clean:
 	rm -rf *.o *.out
+
+
+test:$(BUILD)
+	gcc $(TEST_SRC) -o $(TEST_OUTPUT) -lcunit
+	./$(TEST_OUTPUT)
 	
 	
 	
