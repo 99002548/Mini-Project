@@ -40,7 +40,7 @@ ipl* insightsofipl::findMatchById(int mid)
 
 }
 
-ipl* insightsofipl::findMatchByDate(std::string date, int syear)
+ipl* insightsofipl::findMatchByDate(std::string& date, int syear)
 {
     std::list<ipl> :: iterator iter;
 
