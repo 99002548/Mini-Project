@@ -6,7 +6,7 @@
 #include <iterator>
 
  std::list <ipl> iplmatches;
-void insightsofipl::addmatch(int mid,std::string t1, std::string t2,std::string mdate,int syear,std::string vname,std::string cname,std::string ctryname,std::string twin,std::string m_win,std::string tname,std::string wtype,std::string otype,std::string mom)
+void insightsofipl::addmatch(int mid,std::string& t1, std::string& t2,std::string& mdate,int syear,std::string& vname,std::string& cname,std::string& ctryname,std::string& twin,std::string& m_win,std::string& tname,std::string& wtype,std::string& otype,std::string& mom)
 {
     iplmatches.push_back(ipl(mid,t1,t2,mdate,syear,vname,cname,ctryname,twin,m_win,tname,wtype,otype,mom));
 }
@@ -15,7 +15,7 @@ void insightsofipl::removematch(int mid)
 {
     std::list<ipl> :: iterator iter;
 
-    for(iter=iplmatches.begin();iter!=iplmatches.end();iter++)
+    for(iter=iplmatches.begin();iter!=iplmatches.end();++iter)
     {
         if(iter->getmatchid()==mid)
         {
@@ -29,7 +29,7 @@ ipl* insightsofipl::findMatchById(int mid)
 {
      std::list<ipl> :: iterator iter;
 
-    for(iter=iplmatches.begin();iter!=iplmatches.end();iter++)
+    for(iter=iplmatches.begin();iter!=iplmatches.end();++iter)
     {
         if(mid ==iter->getmatchid())
         {
@@ -44,7 +44,7 @@ ipl* insightsofipl::findMatchByDate(std::string date, int syear)
 {
     std::list<ipl> :: iterator iter;
 
-    for(iter=iplmatches.begin();iter!=iplmatches.end();iter++)
+    for(iter=iplmatches.begin();iter!=iplmatches.end();++iter)
     {
         if( date == iter->getmatchdate() && syear ==iter->getseasonyear())
         {
@@ -62,11 +62,11 @@ ipl* insightsofipl::findMatchByDate(std::string date, int syear)
     int count=0;
     std::list<ipl> :: iterator iter;
 
-    for(iter=iplmatches.begin();iter!=iplmatches.end();iter++)
+    for(iter=iplmatches.begin();iter!=iplmatches.end();++iter)
     {
         if(venue == iter->getvenue())
         {
-            count++;
+              ++count;
         }
     }
 
@@ -78,11 +78,11 @@ ipl* insightsofipl::findMatchByDate(std::string date, int syear)
     int count=0;
     std::list<ipl> :: iterator iter;
 
-    for(iter=iplmatches.begin();iter!=iplmatches.end();iter++)
+    for(iter=iplmatches.begin();iter!=iplmatches.end();++iter)
     {
         if(t1 == iter->getteam1()|| t1== iter->getteam2())
         {
-            count++;
+              ++count;
         }
     }
 
@@ -94,11 +94,11 @@ int insightsofipl::num_of_matches(std::string t1,int syear)
     int count=0;
     std::list<ipl> :: iterator iter;
 
-    for(iter=iplmatches.begin();iter!=iplmatches.end();iter++)
+    for(iter=iplmatches.begin();iter!=iplmatches.end();++iter)
     {
         if((t1 == iter->getteam1()|| t1== iter->getteam2()) && (syear == iter->getseasonyear() ))
         {
-            count++;
+             ++count;
         }
     }
 
@@ -111,11 +111,10 @@ int insightsofipl::num_of_macthes_won(std::string t1)
     int count=0;
     std::list<ipl> :: iterator iter;
 
-    for(iter=iplmatches.begin();iter!=iplmatches.end();iter++)
+    for(iter=iplmatches.begin();iter!=iplmatches.end();++iter)
     {
         if(t1==iter->getmatch_winner())
-        {
-            count++;
+        {  ++count;
         }
     }
 
@@ -128,11 +127,11 @@ int insightsofipl::num_of_toss_won(std::string t1)
  int count=0;
     std::list<ipl> :: iterator iter;
 
-    for(iter=iplmatches.begin();iter!=iplmatches.end();iter++)
+    for(iter=iplmatches.begin();iter!=iplmatches.end();++iter)
     {
         if(t1==iter->gettoss_Winner())
         {
-            count++;
+             ++count;
         }
     }
 
@@ -153,11 +152,11 @@ template <typename T>
 int count=0;
     std::list<ipl> :: iterator iter;
 
-    for(iter=iplmatches.begin();iter!=iplmatches.end();iter++)
+    for(iter=iplmatches.begin();iter!=iplmatches.end();++iter)
     {
         if(player.compare(iter->getman_of_match()))
         {
-            count++;
+            ++count;
         }
     }
 
