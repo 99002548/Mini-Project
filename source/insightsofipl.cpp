@@ -11,19 +11,7 @@ void insightsofipl::addmatch(int mid,std::string& t1, std::string& t2,std::strin
     iplmatches.push_back(ipl(mid,t1,t2,mdate,syear,vname,cname,ctryname,twin,m_win,tname,wtype,otype,mom));
 }
 
-void insightsofipl::removematch(int mid)        
-{
-    std::list<ipl> :: iterator iter;
 
-    for(iter=iplmatches.begin();iter!=iplmatches.end();++iter)
-    {
-        if(iter->getmatchid()==mid)
-        {
-           iplmatches.erase(iter);
-           break;
-        }
-    }
-}
 
 ipl* insightsofipl::findMatchById(int mid)
 {
